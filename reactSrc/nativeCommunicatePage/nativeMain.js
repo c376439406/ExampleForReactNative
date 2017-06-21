@@ -5,6 +5,7 @@ import { View, Button } from "react-native";
 import { StackNavigator } from "react-navigation";
 
 import RNToNative from "./RNToNative";
+import RNToNativeContacts from "./RNToNativeContacts";
 
 class NativeMain extends Component {
   static navigationOptions = {
@@ -23,6 +24,11 @@ class NativeMain extends Component {
           color="#841584"
           onPress={this.pushPage.bind(this, "rNToNative")}
         />
+        <Button
+          title="调用原生通讯录插件"
+          color="#841584"
+          onPress={this.pushPage.bind(this, "rNToNativeContacts")}
+        />
       </View>
     );
   }
@@ -34,7 +40,8 @@ NativeMain.propTypes = {
 
 const NativeMainNav = StackNavigator({
   nativeMain: { screen: NativeMain },
-  rNToNative: { screen: RNToNative }
+  rNToNative: { screen: RNToNative },
+  rNToNativeContacts: { screen: RNToNativeContacts }
 });
 
 export default NativeMainNav;
